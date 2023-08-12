@@ -1,15 +1,13 @@
 import express from 'express';
-import { updateUser } from '../controllers/user.js';
+import { deleteUser, getUser, updateUser } from '../controllers/user.js';
+import { verifyToken } from '../middleware/verifyToken.js';
 
 const router = express.Router();
-
-//  UPDATE USER
-router.put('/:id', updateUser);
+// CREATE A USER
+router.put('/:id', verifyToken, updateUser);
 // DELETE USER
+router.delete('/:id', verifyToken, deleteUser);
 // GET A USER
-// SUBSCRIBE A USER
-// UNSUBSCRIBE A USER
-// LIKE A VIDEO
-// UNLIKE A VIDEO
+router.get('/find/:id', getUser);
 
 export default router;

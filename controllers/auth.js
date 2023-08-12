@@ -1,5 +1,6 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+
 import { createError } from '../error.js';
 import User from '../models/user.js';
 // SIGNUP USER

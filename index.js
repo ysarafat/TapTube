@@ -24,9 +24,8 @@ const connect = () => {
         });
 };
 // routers
-app.use('/api/users', userRouters);
 app.use('/api/auth', authRouters);
-
+app.use('/api/user', userRouters);
 // DEFAULT ERROR HANDLING
 app.use((err, req, res, next) => {
     const status = err.status || 500;
