@@ -2,6 +2,7 @@ import express from 'express';
 import {
     addVideo,
     deleteVideo,
+    getBySearch,
     getByTags,
     getVideo,
     randomVideo,
@@ -31,5 +32,5 @@ router.get('/sub', verifyToken, randomVideo);
 // GET  VIDEO BY TAGS
 router.get('/tags', getByTags);
 // GET  VIDEO BY SEARCH
-router.get('/search', randomVideo);
+router.get('/search', getBySearch);
 export default router;
