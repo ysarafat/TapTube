@@ -5,6 +5,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import authRouters from './routes/auth.js';
 import userRouters from './routes/user.js';
+import videoRouters from './routes/video.js';
 // default configuration
 const app = express();
 const PORT = process.env.PORT || 8800;
@@ -26,6 +27,7 @@ const connect = () => {
 // routers
 app.use('/api/auth', authRouters);
 app.use('/api/user', userRouters);
+app.use('/api/video', videoRouters);
 // DEFAULT ERROR HANDLING
 app.use((err, req, res, next) => {
     const status = err.status || 500;

@@ -18,6 +18,6 @@ router.get('/find/:id', getUser);
 // SUBSCRIBE A USER
 router.put('/subscribe/:id', verifyToken, subscribeUser);
 // UNSUBSCRIBE A USER
-router.put('/subscribe/:id', verifyToken, unSubscribeUser);
+router.put('/unsubscribe/:id', verifyToken, unSubscribeUser);
 
 export default router;
