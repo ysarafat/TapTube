@@ -2,8 +2,10 @@ import express from 'express';
 import {
     deleteUser,
     getUser,
+    like,
     subscribeUser,
     unSubscribeUser,
+    unlike,
     updateUser,
 } from '../controllers/user.js';
 import { verifyToken } from '../middleware/verifyToken.js';
@@ -19,5 +21,9 @@ router.get('/find/:id', getUser);
 router.put('/subscribe/:id', verifyToken, subscribeUser);
 // UNSUBSCRIBE A USER
 router.put('/unsubscribe/:id', verifyToken, unSubscribeUser);
+// LIKE
+router.put('/like/:videoId', verifyToken, like);
+// UNLIKE
+router.put('/unlike/:videoId', verifyToken, unlike);
 
 export default router;
